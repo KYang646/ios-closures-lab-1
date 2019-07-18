@@ -44,6 +44,12 @@ Input: `let numbers = [1, 2, 3, 4, 6, 8, 9, 3, 12, 11]`
 
 Expected values: `multiples = [3, 6, 9, 3, 12]`
 
+```
+let filteredArray = numbers.map({a -> Int in
+return a * 3
+})
+print(filteredArray)
+```
 
 ## Question 3
 
@@ -53,7 +59,14 @@ Example:
 Input: `let numbers = [4, 7, 1, 9, 6, 5, 6, 9]`
 
 Output: `9`
+```
+let reduceToFindLargestElement = newArrayOfInts.reduce(0, {x, y in
+return x > y ? x : y
+//ternary operator -> condition ? true : false
 
+})
+print(reduceToFindLargestElement)
+```
 
 ## Question 4
 
@@ -64,14 +77,31 @@ Input: `let strings = ["We", "Heart", "Swift"]`
 
 Output: `"We Heart Swift"`
 
+let someSuperString = strings.reduce(“”){
+if $0 == “” {
+return $1
+} else {
+return $0 + ” ” + $1
+}
+}
+print(someSuperString)
 
 ## Question 5
 
 `let cities = ["Shanghai", "Beijing", "Delhi", "Lagos", "Tianjin", "Karachi", "Karachi", "Tokyo", "Guangzhou", "Mumbai", "Moscow", "São Paulo"]`
 
 a. Use `sortedBy` to sort `cities` in alphabetical order.
+```
+var citiesByAlpha = cities.sorted()
+print(citiesByAlpha)
+```
 
 b. Use `sortedBy` to sort `cities` alphabetical order of the second character of the city name.
+
+```
+let alphaTwoRemove = citiesZ.sorted(by: {x,y in x.dropFirst() < y.dropFirst()})
+
+```
 
 c. Use `sortedBy` to sort `cities` in order of the length of the city name.
 
